@@ -1,6 +1,6 @@
 package com.recursion;
 
-import jdk.dynalink.beans.StaticClass;
+
 
 import java.util.*;
 public class Question6 {
