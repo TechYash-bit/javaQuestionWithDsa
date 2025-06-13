@@ -1,6 +1,7 @@
 package marrix;
 
 import java.util.Scanner;
+////find the  row sum in matrix
 
 public class RowWiseSum {
     public static void main(String[] args) {

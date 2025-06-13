@@ -1,5 +1,5 @@
 package marrix;
-
+//find the element in matrix sorted in row and col wise
 public class MatrixSortedRowCol {
     public static void main(String[] args) {
         int arr[][]={
