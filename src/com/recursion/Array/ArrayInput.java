@@ -3,7 +3,7 @@ package com.recursion.Array;
 import java.util.Scanner;
 //date:-2 may 2025
 
-public class ArrayInput
+public class ArrayInput extends OutputArray
 {
 
 
