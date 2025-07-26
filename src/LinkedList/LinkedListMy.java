@@ -23,11 +23,24 @@ public class LinkedListMy {
             tail=temp;
         }
     }
+    void insertAtLast(int data){
+        Node temp=new Node(data);
+       if(head==null){
+           head=temp;
+           tail=temp;
+           return;
+       }
+        Node t=head;
+        while(t.next!=null){
+            t=t.next;
+        }
+        t.next=temp;
+    }
 
     void insertAtStart(int data){
         Node temp=new Node(data);
          if(head==null){
-             head=temp;tail=temp;
+             insertAtEnd(temp.data);
          }
          else{
              temp.next=head;
@@ -37,9 +50,10 @@ public class LinkedListMy {
     void display(){
         Node temp=head;
         while(temp!=null){
-            System.out.println(temp.data + " ");
+            System.out.print(temp.data + " ");
             temp=temp.next;
         }
+        System.out.println();
     }
     int size(){
         Node temp=head;
@@ -49,6 +63,62 @@ public class LinkedListMy {
             temp=temp.next;
         }
         return count;
+    }
+    void insertAt(int index,int data){
+       Node nw=new Node(data);
+       Node temp=head;
+       if(index==size()){
+           insertAtEnd(data);
+           return;
+       }
+       else if(index==0){
+           insertAtStart(data);
+           return;
+       }
+       else if(index<0 || index>size()){
+           System.out.println("wwrong index was given");
+           return;
+       }
+       for(int i=0;i<index-1;i++){
+           temp=temp.next;
+        }
+       nw.next=temp.next;
+       temp.next=nw;
+
+    }
+
+    int getElement(int index){
+        if(index==0)
+            return head.data;
+
+        else if(index==size())
+            return tail.data;
+
+        Node temp=head;
+        for(int i=0;i<index-1;i++){
+            temp=temp.next;
+        }
+        return temp.data;
+
+
+    }
+
+    void deleteNode(int index){
+        Node temp=head;
+        if(index==0){
+            head=head.next;
+        }
+        for(int i=0;i<index-1;i++){
+            temp=temp.next;
+        }
+        if (temp == null || temp.next == null){
+            System.out.println("invalid index");
+            return;}
+        temp.next=temp.next.next;
+        if(temp.next.next==null){
+            temp=head;
+        }
+
     }
 
 }
